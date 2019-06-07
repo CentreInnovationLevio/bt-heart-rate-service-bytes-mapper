@@ -8,7 +8,7 @@ class HeartRateMeasurementBytesMapper {
 
   static HeartRateMeasurement mapHeartRateMeasurementBytesToReadableData(byte[] bytes) {
     HeartRateMeasurement hrm = new HeartRateMeasurement();
-    HeartRateMeasurementFlags flags = setFlagsFromRawData(bytes);
+    HeartRateMeasurementFlags flags = mapBytesToHeartRateMeasurementFlags(bytes);
     hrm.setFlags(flags);
     int bitNumber = setHeartRateValueFromRawData(bytes, hrm);
     bitNumber = setEnergyExpended(bytes, hrm, bitNumber);
@@ -58,7 +58,7 @@ class HeartRateMeasurementBytesMapper {
     return bitNumber;
   }
 
-  private static HeartRateMeasurementFlags setFlagsFromRawData(byte[] bytes) {
+  private static HeartRateMeasurementFlags mapBytesToHeartRateMeasurementFlags(byte[] bytes) {
 
     HeartRateMeasurementFlags flags = new HeartRateMeasurementFlags();
 

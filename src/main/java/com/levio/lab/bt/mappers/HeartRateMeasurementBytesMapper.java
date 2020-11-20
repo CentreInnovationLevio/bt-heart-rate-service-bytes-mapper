@@ -4,9 +4,9 @@ import com.levio.lab.bt.services.heartrate.heartratemeasurement.HeartRateMeasure
 import com.levio.lab.bt.services.heartrate.heartratemeasurement.HeartRateMeasurementFlags;
 import com.levio.lab.bt.utils.ByteUtils;
 
-class HeartRateMeasurementBytesMapper {
+public class HeartRateMeasurementBytesMapper {
 
-  static HeartRateMeasurement mapHeartRateMeasurementBytesToReadableData(byte[] bytes) {
+  public static HeartRateMeasurement mapHeartRateMeasurementBytesToReadableData(byte[] bytes) {
     HeartRateMeasurement hrm = new HeartRateMeasurement();
     HeartRateMeasurementFlags flags = mapBytesToHeartRateMeasurementFlags(bytes);
     hrm.setFlags(flags);
